@@ -50,20 +50,22 @@ def calculate_total_time(start_time, end_time):
     return total_time
 
 def log_assessment_result(records, name = ""):
+    print(records)
     fname = "default.csv"
     if name !="":
         fname = name+".csv"
+    update = ""
+    for record in records:
+        line = ""            
+        for field in record:
+            if line != "":
+                line = line + "," + str(field)
+            else:
+                line = str(field)
+        line = line + "\n"
+        update = update + line
+
     with open(fname, "a") as f:
-        for record in records:
-            update = ""
-            line = ""            
-            for field in record:
-                if line != "":
-                    line = line + "," + str(field)
-                else:
-                    line = str(field)
-            line = line + "\n"
-            update = update + line
         f.write(update)
 
 

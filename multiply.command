@@ -26,7 +26,7 @@ if __name__ == "__main__":
         is_correct = mq.check_multiplication_answer(a, b, int(ans))
         time_stamp = time.strftime("%a %d %b %Y %H:%M:%S +0000", time.gmtime())
         records.append((start_time, name, time_stamp, a, b, a*b, duration, is_correct))
-        mq.log_assessment_result(records, name.lower())
+        
         if ans.isdigit() and is_correct:
             num_correct += 1
             print("Correct")
@@ -34,6 +34,7 @@ if __name__ == "__main__":
             print(f"Wrong... The answer is {a*b}.\n")
             print("\nG A M E   O V E R   ! ! !\n")
             break
+    mq.log_assessment_result(records, name.lower())
     
     if num_correct == num_of_question:
         end_time = time.time()
