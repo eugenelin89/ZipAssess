@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 import time
 #from my_quiz import check_multiplication_answer, generate_multiplication_question, calculate_total_time
