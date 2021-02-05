@@ -50,7 +50,6 @@ def calculate_total_time(start_time, end_time):
     return total_time
 
 def log_assessment_result(records, name = ""):
-    print(records)
     fname = "default.csv"
     if name !="":
         fname = name+".csv"
