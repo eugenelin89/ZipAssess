@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 import time
+import os
 #from my_quiz import check_multiplication_answer, generate_multiplication_question, calculate_total_time
 #import my_quiz
 import my_quiz as mq
 
 if __name__ == "__main__":
-    
-    num_of_question = 5
+    print(os.getcwd())
+    num_of_question = 20
     num_correct = 0
 
     name = input("Please Enter your Name: ") # This will be changed to other forms of ID
