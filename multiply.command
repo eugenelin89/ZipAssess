@@ -9,7 +9,6 @@ import my_quiz as mq
 if __name__ == "__main__":
     print(os.getcwd())
     num_of_question = 20
-    num_correct = 0
 
     name = input("Please Enter your Name: ") # This will be changed to other forms of ID
 
@@ -20,6 +19,7 @@ if __name__ == "__main__":
     play_again = "Y"
     assessment_id = time.time() # Use time as ID.
     while play_again.upper().startswith("Y"):
+        num_correct = 0
         input("\nPress Enter to start...\n")
         start_time = time.time()
         for i in range(num_of_question):
@@ -41,6 +41,7 @@ if __name__ == "__main__":
                 break
         
 
+        mq.log_assessment_result(records, name.lower())
         if num_correct == num_of_question:
             end_time = time.time()
             total_time = mq.calculate_total_time(start_time, end_time)
@@ -51,5 +52,4 @@ if __name__ == "__main__":
 
         play_again = input("Play again (Y/N)? ")
 
-    mq.log_assessment_result(records, name.lower())
     print("Bye!")
