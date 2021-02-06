@@ -66,6 +66,7 @@ def log_assessment_result(records, name = ""):
 
     with open(fname, "a") as f:
         f.write(update)
+    
 
 
 
