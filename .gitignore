@@ -1,3 +1,5 @@
 ZipAssess.code-workspace
 __pycache__/
 .ipynb_checkpoints/
+data_raw/
+data_trained/
