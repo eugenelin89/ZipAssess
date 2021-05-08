@@ -91,6 +91,10 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
 
+- intent: request_challenge_start
+  examples: |
+    - "start the challenge"
+
 - regex: numeric
   examples: |
     - ^\d+$

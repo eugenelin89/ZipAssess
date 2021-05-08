@@ -11,3 +11,10 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate Challenge Form
+  steps:
+    - intent: request_challenge_start
+    - action: action_hello_world #get_challenges
+    #- action: challenge_form
+    #- active_loop: challenge_form

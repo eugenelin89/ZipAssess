@@ -4,3 +4,4 @@ __pycache__/
 data_raw/
 data_trained/
 chat/models/
+.vscode/

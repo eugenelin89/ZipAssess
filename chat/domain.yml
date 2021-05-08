@@ -8,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - request_challenge_start
 
 responses:
   utter_greet:
@@ -28,6 +29,30 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_ask_challenge_form_qa1:
+  - text: "Q1: {question1}"
+
+  utter_ask_challenge_form_qa2:
+  - text: "Q2: {question2}"
+
+  utter_ask_challenge_form_qa3:
+  - text: "Q3: {question3}"
+
+actions:
+  - action_hello_world
+
+forms:
+  challenge_form:
+    qa1:
+      - type: from_entity
+        entity: ans1
+    qa2:
+      - type: from_entity
+        entity: ans2
+    qs3:
+      - type: from_entity
+        entity: ans3
 
 session_config:
   session_expiration_time: 60
