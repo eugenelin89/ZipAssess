@@ -95,10 +95,10 @@ nlu:
   examples: |
     - "start the challenge"
 
-- regex: numeric
+- regex: numeric_answer
   examples: |
     - ^\d+$
 
 - intent: answer
   examples: |
-    - [12](numeric)
+    - [12](numeric_answer)

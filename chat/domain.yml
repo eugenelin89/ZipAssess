@@ -9,6 +9,10 @@ intents:
   - mood_unhappy
   - bot_challenge
   - request_challenge_start
+  - answer
+
+entities:
+  - numeric_answer
 
 responses:
   utter_greet:
@@ -41,18 +45,44 @@ responses:
 
 actions:
   - action_hello_world
+  - action_get_challenge
+
+slots:
+  question1:
+    type: text
+    influence_conversation: false
+
+  question2:
+    type: text
+    influence_conversation: false
+
+  question3:
+    type: text
+    influence_conversation: false
+
+  qa1: #slots to store user's answer to question 1
+    type: text
+    influence_conversation: false
+  
+  qa2:
+    type: text
+    influence_conversation: false
+
+  qa3:
+    type: text
+    influence_conversation: false
 
 forms:
   challenge_form:
     qa1:
       - type: from_entity
-        entity: ans1
+        entity: numeric_answer #ans1
     qa2:
       - type: from_entity
-        entity: ans2
-    qs3:
+        entity: numeric_answer #ans2
+    qa3:
       - type: from_entity
-        entity: ans3
+        entity: numeric_answer #ans3
 
 session_config:
   session_expiration_time: 60

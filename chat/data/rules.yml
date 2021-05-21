@@ -15,6 +15,6 @@ rules:
 - rule: Activate Challenge Form
   steps:
     - intent: request_challenge_start
-    - action: action_hello_world #get_challenges
-    #- action: challenge_form
-    #- active_loop: challenge_form
+    - action: action_get_challenge
+    - action: challenge_form
+    - active_loop: challenge_form
