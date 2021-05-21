@@ -8,11 +8,11 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-  - request_challenge_start
+  - request_challenge_start # intent that lauches challenge
   - answer
 
 entities:
-  - numeric_answer
+  - numeric_answer # used in nlu.yml for answer intent
 
 responses:
   utter_greet:
@@ -34,55 +34,55 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_ask_challenge_form_qa1:
-  - text: "Q1: {question1}"
+  utter_ask_challenge_form_qa1: # challenge form question for setting slot qa1 
+  - text: "Q1: {question1}" # question1 value slot set by custom action
 
-  utter_ask_challenge_form_qa2:
-  - text: "Q2: {question2}"
+  utter_ask_challenge_form_qa2: # challenge form question for setting slot qa2
+  - text: "Q2: {question2}" # question2 value slot set by custom action
 
-  utter_ask_challenge_form_qa3:
-  - text: "Q3: {question3}"
+  utter_ask_challenge_form_qa3: # challenge form question for setting slot qa3
+  - text: "Q3: {question3}" # question3 value slot set by custom action
 
 actions:
   - action_hello_world
-  - action_get_challenge
+  - action_get_challenge # Custom Action to set questionN slot values.
 
 slots:
-  question1:
+  question1: # question, to be set by action_get_cahllenge
     type: text
     influence_conversation: false
 
-  question2:
+  question2: # question, to be set by action_get_cahllenge
     type: text
     influence_conversation: false
 
-  question3:
+  question3: # question, to be set by action_get_cahllenge
     type: text
     influence_conversation: false
 
-  qa1: #slots to store user's answer to question 1
+  qa1: #slots to store user's answer to question 1, value set by challenge form
     type: text
     influence_conversation: false
   
-  qa2:
+  qa2: #slots to store user's answer to question 2, value set by challenge form
     type: text
     influence_conversation: false
 
-  qa3:
+  qa3: #slots to store user's answer to question 3, value set by challenge form
     type: text
     influence_conversation: false
 
-forms:
+forms: # challenge questions and answers implemented using form
   challenge_form:
-    qa1:
+    qa1: # answer to question1
       - type: from_entity
-        entity: numeric_answer #ans1
-    qa2:
+        entity: numeric_answer
+    qa2: # answer to question2
       - type: from_entity
-        entity: numeric_answer #ans2
-    qa3:
+        entity: numeric_answer
+    qa3: # answer to question3
       - type: from_entity
-        entity: numeric_answer #ans3
+        entity: numeric_answer
 
 session_config:
   session_expiration_time: 60

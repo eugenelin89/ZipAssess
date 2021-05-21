@@ -12,6 +12,7 @@ rules:
   - intent: bot_challenge
   - action: utter_iamabot
 
+# Activating form for asking challenge questions and receiving user answers
 - rule: Activate Challenge Form
   steps:
     - intent: request_challenge_start

@@ -95,10 +95,12 @@ nlu:
   examples: |
     - "start the challenge"
 
+# Regex to be used by the answer intent
 - regex: numeric_answer
   examples: |
     - ^\d+$
 
+# Anser intent represent an answer to a challenge question for user
 - intent: answer
   examples: |
     - [12](numeric_answer)
