@@ -19,3 +19,6 @@ rules:
     - action: action_get_challenge
     - action: challenge_form
     - active_loop: challenge_form
+    - active_loop: null
+    - action: action_answer_challenge
+    - action: action_reset_slots

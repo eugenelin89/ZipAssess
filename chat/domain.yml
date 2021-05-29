@@ -46,6 +46,8 @@ responses:
 actions:
   - action_hello_world
   - action_get_challenge # Custom Action to set questionN slot values.
+  - action_answer_challenge
+  - action_reset_slots
 
 slots:
   question1: # question, to be set by action_get_cahllenge
@@ -80,9 +82,9 @@ forms: # challenge questions and answers implemented using form
     qa2: # answer to question2
       - type: from_entity
         entity: numeric_answer
-    qa3: # answer to question3
-      - type: from_entity
-        entity: numeric_answer
+    #qa3: # answer to question3
+    #  - type: from_entity
+    #    entity: numeric_answer
 
 session_config:
   session_expiration_time: 60
